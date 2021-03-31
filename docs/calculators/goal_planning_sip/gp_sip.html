@@ -35,7 +35,7 @@
   <body>
     
 <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-  <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="../dashboard/dashboard.html">FinByte.</a>
+  <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="../../index.html">FinByte.</a>
   <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -55,6 +55,73 @@
   </div>
 </div>
 
+<div class="container">
+  <!---<h1>Sip Calculator</h1>
+  <form action="">
+    <div>
+      <label for="p">Amount Invested:</label>
+      <input type="number" id="#height">
+    </div>
+    <div>
+      <label for="roi">Expected Rate of Return:</label>
+      <input type="number" id="#weight">
+    </div>
+    <div>
+      <label for="t">Years:</label>
+      <input type="number" id="t">
+    </div>
+    <div>
+    <button id="btn">Calculate</button>
+  </div>
+    <div><br>
+      <label for="result">Expected Return:</label>
+      <div id="result">0</div>
+    </div>
+    <div>
+    </div>--->
+	
+	 
+        <h1>SIP Calculator</h1>
+  
+        <!-- Option for providing height 
+            and weight to the user-->
+        <p><b>Monthly Investment</b></p>
+  
+        <input type="text" placeholder="Per Month "id="height">
+		
+  
+        <p><b>Time period in year</b></p>
+  
+        <input type="text" placeholder="yrs."id="weight">
+		
+		<p><b>Expected Return rate in %</b></p>
+  
+        <input type="text" placeholder="%"id="ret">
+  
+        <button id="btn">Calculate</button>
+  
+        <div  id="result"></div>
+		<div class="chart-container" style="position:relative; height:16vh; width:32vw;">
+	
+
+
+<canvas id="myChart" width="40" height="40"></canvas>
+</div>
+		
+    </div>
+  </form>
+  
+</div>
+
+<script src="../dist/Chart.js"></script>
+
+<script>
+
+</script>
+<script>
+
+
+</script>
 
     <script src="..\..\assets\dist\js\bootstrap.bundle.min.js"></script>
 
