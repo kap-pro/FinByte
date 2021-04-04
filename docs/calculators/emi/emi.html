@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.80.0">
+    <title>FinByte - EMI Calculator</title>
+    <link rel="shortcut icon" type="image/jpg" href="/docs/assets/images/favicon.ico"/>
+
+    <!-- Bootstrap core CSS -->
+<link href="/docs/assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="emi.css" rel="stylesheet">
+  </head>
+  <body>
+    
+<header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+  <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="/docs/dashboard/dashboard.html">FinByte.</a>
+  <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
+  <ul class="navbar-nav px-3">
+    <li class="nav-item text-nowrap">
+      <a class="nav-link" href="/docs/sign-in/signin.html">Sign out</a>
+    </li>
+  </ul>
+</header>
+
+<div class="container-fluid">
+  <div class="row">
+    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+      <div class="position-sticky pt-3">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="/docs/dashboard/dashboard.html">
+              <span data-feather="user"></span>
+              Dashboard
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="file"></span>
+              Watchlist
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="briefcase"></span>
+              Portfolio
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="/docs/calculators/calculators.html">
+              <span data-feather="divide-circle"></span>
+              Calculators
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="bar-chart-2"></span>
+              Reports
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="layers"></span>
+              Integrations
+            </a>
+          </li>
+        </ul>
+
+        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+          <span>Saved reports</span>
+          <a class="link-secondary" href="#" aria-label="Add a new report">
+            <span data-feather="plus-circle"></span>
+          </a>
+        </h6>
+        <ul class="nav flex-column mb-2">
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="file-text"></span>
+              Current month
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="file-text"></span>
+              Last quarter
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="file-text"></span>
+              Social engagement
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="file-text"></span>
+              Year-end sale
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3">
+        <h1 class="h2">EMI Calculator</h1>
+      </div>
+      <p class="pb-2 mb-3 border-bottom">Wish to calculate the monthly EMI of your loan? Calculate the EMI that you would pay every month to repay your loan using our EMI Calculator.</p>
+      <form class="row g-3">
+        <div class="col-md-3 mb-3">
+          <label for="exampleInputEmail1" class="form-label">Loan Amount <span class="text-danger font-weight-bold">*</span></label>
+          <input type="number" class="form-control" id="exampleInputEmail1" placeholder="Ex: 1000" aria-describedby="emailHelp" required>
+        </div>
+        <div class="col-md-3 mb-3">
+          <label for="exampleInputPassword1" class="form-label">Loan Tenure <span class="text-danger font-weight-bold">*<small class="txtsize">(Up to 30 years)</small></span></label>
+          <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Ex: 10" required>
+        </div>
+        <div class="col-md-3 mb-3">
+          <label for="exampleInputPassword1" class="form-label">Interest Rate(P.A) <span class="text-danger font-weight-bold">*</span></label>
+          <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Ex: 12%" required>
+        </div>
+        <div class="col-11">
+          <button class="btn btn-primary" type="submit">Calculate EMI</button>
+        </div>
+      </form>
+      <div class="align-items-center pt-5 pb-2 mb-2 border-bottom">
+        <h1 class="h2 mb-4 pb-3 border-bottom">About EMI Calculator</h1>
+        
+        <h5>1) What is meant by an EMI?</h5>
+        <p>EMI stands for Equated Monthly Installments which a borrower pays regularly to the lender in return for the principal and the interest accrued on it. The total payment amount that is the loan amount and the accrued interest, is divided equally by the loan tenure to calculate EMI. The EMIs is to be paid till the total repayment of loan is not done.</p>
+        
+        <h5 class="pt-2">2) What are the benefits of EMI?</h5>
+        <p>EMI helps in reducing the financial burden from the borrower as he doesn’t have to pay the loan amount back at once. It helps to the borrower to fulfill their luxury dreams by purchasing things in an EMI as they don’t have to make an upfront expense. EMI is easy on the wallet and has flexibility as it lets us decide our EMI amount or tenure.</p>
+
+        <h5 class="pt-2">3) What is the loan tenure?</h5>
+        <p>Whenever we take loans for anything be it home loan, car loan, personal loan, we have to pay it through EMI over a specified period called Loan Tenure. The shorter the loan tenure, higher the EMIs will be and vice versa. So, it is advised to choose a reasonable duration so as to avoid paying high EMIs.</p>
+
+        <h5 class="mb-2">4) How is interest rate determined in EMIs?</h5>
+        <p>The Education loan interest rate is the rate charges on the loan by the lender. It can be fixed or floating. If its fixed, then the EMI amount will be same every month. However, if you have opted for floating interest rate then the EMI can be affected positively or negatively depending upon the interest rate movement.</p>
+
+        <h5 class="mb-2">5) How is EMI calculated?</h5>
+        <p>EMI calculation is dependent on 3 things; loan amount, interest rate and tenure of the repayment. The interest rate is calculated per month instead of per annum as the EMI is monthly payment. Then the total loan amount and interest amount is divided by the tenure (number of months) to calculate EMI. However, we don’t need to remember any formula to calculate it as we have made an online EMI calculator for your convenience.</p>
+
+        <h5 class="mb-2">6) How to use this online EMI calculator?</h5>
+        <p>To use EMI calculator online you need to enter 3 things, i.e., loan amount, the interest rate and the loan tenure. After entering the values, you will get the EMI amount which you need to pay monthly and the breakup of total loan value and interest value in the pie-chart.</p>
+      </div>
+    </main>
+  </div>
+</div>
+
+
+    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+
+      <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script><script src="emi.js"></script>
+  </body>
+</html>

@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.80.0">
+    <title>FinByte - Compound Interest Calculator</title>
+    <link rel="shortcut icon" type="image/jpg" href="/docs/assets/images/favicon.ico"/>
+
+    <!-- Bootstrap core CSS -->
+<link href="/docs/assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="ci.css" rel="stylesheet">
+  </head>
+  <body>
+    
+<header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+  <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="/docs/dashboard/dashboard.html">FinByte.</a>
+  <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
+  <ul class="navbar-nav px-3">
+    <li class="nav-item text-nowrap">
+      <a class="nav-link" href="/docs/sign-in/signin.html">Sign out</a>
+    </li>
+  </ul>
+</header>
+
+<div class="container-fluid">
+  <div class="row">
+    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+      <div class="position-sticky pt-3">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="/docs/dashboard/dashboard.html">
+              <span data-feather="user"></span>
+              Dashboard
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="file"></span>
+              Watchlist
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="briefcase"></span>
+              Portfolio
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="/docs/calculators/calculators.html">
+              <span data-feather="divide-circle"></span>
+              Calculators
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="bar-chart-2"></span>
+              Reports
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="layers"></span>
+              Integrations
+            </a>
+          </li>
+        </ul>
+
+        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+          <span>Saved reports</span>
+          <a class="link-secondary" href="#" aria-label="Add a new report">
+            <span data-feather="plus-circle"></span>
+          </a>
+        </h6>
+        <ul class="nav flex-column mb-2">
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="file-text"></span>
+              Current month
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="file-text"></span>
+              Last quarter
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="file-text"></span>
+              Social engagement
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="file-text"></span>
+              Year-end sale
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3">
+        <h1 class="h2">Compound Interest Calculator</h1>
+      </div>
+      <p class="pb-2 mb-3 border-bottom">Wish to Calculate the compound interest on your savings? Calculate the amount that you would receive at the end with added interest using our Compound Interest Calculator.</p>
+      <form class="row g-3">
+        <div class="col-md-3 mb-3">
+          <label for="exampleInputEmail1" class="form-label">Initial Investment (Lumpsum) <span class="text-danger font-weight-bold">*</span></label>
+          <input type="number" class="form-control" id="exampleInputEmail1" placeholder="Ex: 200" aria-describedby="emailHelp" required>
+        </div>
+        <div class="col-md-3 mb-3">
+          <label for="exampleInputPassword1" class="form-label">Tenure <span class="text-danger font-weight-bold">*</span></label>
+          <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Ex: 5" required>
+        </div>
+        <div class="col-md-3 mb-3">
+          <label for="exampleInputPassword1" class="form-label">Interest Rate <span class="text-danger font-weight-bold">*</span></label>
+          <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Ex: 12%" required>
+        </div>
+        <div class="col-md-3 mb-3">
+          <label for="exampleInputPassword1" class="form-label">Compounding Frequency <span class="text-danger font-weight-bold">*</span></label>
+          <select class="form-select form-select-md" aria-label=".form-select-sm example">
+            <option value="0" selected>Monthly</option>
+            <option value="1">Quarterly</option>
+            <option value="2">Half-Yearly</option>
+            <option value="3">Yearly</option>
+          </select>
+        </div>
+        <div class="col-md-3 mb-3">
+          <label for="exampleInputEmail1" class="form-label">Regular Investment (If any) <span class="text-danger font-weight-bold">*</span></label>
+          <input type="number" class="form-control" id="exampleInputEmail1" placeholder="Ex: 5" aria-describedby="emailHelp" required>
+        </div>
+        <div class="col-md-3 mb-3">
+          <label for="exampleInputPassword1" class="form-label">Regular deposit frequency <span class="text-danger font-weight-bold">*</span></label>
+          <select class="form-select form-select-md" aria-label=".form-select-sm example">
+            <option value="0" selected>Monthly</option>
+            <option value="1">Quarterly</option>
+            <option value="2">Half-Yearly</option>
+            <option value="3">Yearly</option>
+          </select>
+        </div>
+        <div class="col-11">
+          <button class="btn btn-primary" type="submit">Calculate Compound Interest</button>
+        </div>
+      </form>
+      <div class="align-items-center pt-5 pb-2 mb-2 border-bottom">
+        <h1 class="h2 mb-4 pb-3 border-bottom">About Compound Interest Calculator</h1>
+        
+        <h5>1) What is Compound Interest?</h5>
+        <p>Compound Interest is the interest which we earn on the invested principal plus the interest accrued. In simple words it is interest on interest. It reinvests the interest earned so that for the next period we earn interest on the principal amount plus the previous interest earned. Compound interest calculates the total interest earned for the investment compounded for the different tenures and frequency. It is also known as cumulative interest calculator.</p>
+        
+        <h5 class="pt-2">2) What is the frequency of compounding?</h5>
+        <p>It means number of times the interest is calculated and added to the investment value. The higher the frequency of compounding, better the returns will be. In Fixed Deposits the frequency of compounding is quarterly. For various instruments, it can be monthly, quarterly, half-yearly or annually depending on what one opts for.</p>
+
+        <h5 class="pt-2">3) How to calculate Compound Interest?</h5>
+        <p>Compound interest calculation is very simple. Its just like simple interest where the principal amount changes every period. The formula for compound interest is: <br>
+
+          V = P ((1+(r/n))^(nt)
+          <br>
+          Where,
+          <br>
+          P = Principal
+          <br>
+          R = Interest rate
+          <br>
+          N = Compounding frequency
+          <br>
+          T = Tenure
+          <br>
+          In this, the interest rate and the period are adjusted according to the compounding frequency. That is, if the compounding frequency is quarterly then we divide interest rate by 4 and multiply the tenure by 4.</p>
+
+        <h5 class="mb-2">4) What is Effective Annual Interest Rate?</h5>
+        <p>It is the interest rate that is earned effectively on the investment amount annually. It is calculated by adjusting for the compounding frequency over a given time period. If compound interest is paid annually then the effective rate of interest and compound interest rate will be the same.</p>
+
+        <h5 class="mb-2">5) How to use our Compound Interest Calculator?</h5>
+        <p>To calculate the compound interest earned on your lumpsum investment, you just need to enter your investment amount, interest rate, tenure and compounding frequency. It will give you the result, i.e., total amount invested, and the interest earned on it. Finology has a feature on it that you can also calculate the compound interest on your monthly savings/investment. Enter the frequency and amount of regular deposits and click on calculate. You will get the total return for your investments made with the effect of compounding. It also works as an annuity due calculator for your investments.
+           <br>For example, if you want to deposit Rs 100 every month for 10 years and you want to earn quarterly interest on that of 10%, then enter 0 as your principal, 10% in interest rate, select quarterly on compounding frequency, enter 100 in regular investment and select monthly in deposit frequency. Click on calculate and you will know the amount you earned by your investment.</p>
+      </div>
+    </main>
+  </div>
+</div>
+
+
+    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+
+      <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script><script src="ci.js"></script>
+  </body>
+</html>

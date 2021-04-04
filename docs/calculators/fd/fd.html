@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.80.0">
+    <title>FinByte - Fixed Deposit Calculator</title>
+    <link rel="shortcut icon" type="image/jpg" href="/docs/assets/images/favicon.ico"/>
+
+    <!-- Bootstrap core CSS -->
+<link href="/docs/assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="fd.css" rel="stylesheet">
+  </head>
+  <body>
+    
+<header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+  <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="/docs/dashboard/dashboard.html">FinByte.</a>
+  <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
+  <ul class="navbar-nav px-3">
+    <li class="nav-item text-nowrap">
+      <a class="nav-link" href="/docs/sign-in/signin.html">Sign out</a>
+    </li>
+  </ul>
+</header>
+
+<div class="container-fluid">
+  <div class="row">
+    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+      <div class="position-sticky pt-3">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="/docs/dashboard/dashboard.html">
+              <span data-feather="user"></span>
+              Dashboard
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="file"></span>
+              Watchlist
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="briefcase"></span>
+              Portfolio
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="/docs/calculators/calculators.html">
+              <span data-feather="divide-circle"></span>
+              Calculators
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="bar-chart-2"></span>
+              Reports
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="layers"></span>
+              Integrations
+            </a>
+          </li>
+        </ul>
+
+        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+          <span>Saved reports</span>
+          <a class="link-secondary" href="#" aria-label="Add a new report">
+            <span data-feather="plus-circle"></span>
+          </a>
+        </h6>
+        <ul class="nav flex-column mb-2">
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="file-text"></span>
+              Current month
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="file-text"></span>
+              Last quarter
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="file-text"></span>
+              Social engagement
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="file-text"></span>
+              Year-end sale
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3">
+        <h1 class="h2">Fixed Deposit Calculator</h1>
+      </div>
+      <p class="pb-2 mb-3 border-bottom">Wish to calculate the returns on your FD? Calculate the amount that you would receive at the end with added interest using our Fixed Deposit Calculator.</p>
+      <form class="row g-3">
+        <div class="col-md-3 mb-3">
+          <label for="exampleInputEmail1" class="form-label">Amount Deposited <span class="text-danger font-weight-bold">*</span></label>
+          <input type="number" class="form-control" id="exampleInputEmail1" placeholder="Ex: 1000" aria-describedby="emailHelp" required>
+        </div>
+        <div class="col-md-3 mb-3">
+          <label for="exampleInputPassword1" class="form-label">Loan Tenure (in years) <span class="text-danger font-weight-bold">*<small class="txtsize">(Up to 50 years)</small></span></label>
+          <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Ex: 10" required>
+        </div>
+        <div class="col-md-3 mb-3">
+          <label for="exampleInputPassword1" class="form-label">Interest Rate(P.A) <span class="text-danger font-weight-bold">*</span></label>
+          <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Ex: 12%" required>
+        </div>
+        <div class="col-md-3 mb-3">
+          <label for="exampleInputPassword1" class="form-label">Compounding Frequency <span class="text-danger font-weight-bold">*<small class="txtsize">(Up to 50 years)</small></span></label>
+          <select class="form-select form-select-md" aria-label=".form-select-sm example">
+            <option value="0" selected>Monthly</option>
+            <option value="1">Quarterly</option>
+            <option value="2">Half-Yearly</option>
+            <option value="3">Yearly</option>
+          </select>
+        </div>
+        <div class="col-11">
+          <button class="btn btn-primary" type="submit">Calculate Fixed Deposit</button>
+        </div>
+      </form>
+      <div class="align-items-center pt-5 pb-2 mb-2 border-bottom">
+        <h1 class="h2 mb-4 pb-3 border-bottom">About Fixed Deposit Calculator</h1>
+        
+        <h5>1) What is Fixed Deposit?</h5>
+        <p>Fixed deposit is an investment instrument that is offered by banks and NBFCs, where we can deposit our money earning a higher rate of interest than savings accounts. This FD calculator can help you know the maturity amount you will earn by opening a FD account.</p>
+        
+        <h5 class="pt-2">2) What are the benefits of Fixed Deposit?</h5>
+        <p>There are various benefits of fixed deposit. Some are:
+          <ul>
+            <li>Better FD interest rate than normal savings account.</li>
+            <li>Acts as a safe investment option.</li>
+            <li>Provide generally 7-8% of fixed returns for the period.</li>
+            <li>Good option for conservative investors.</li>
+          </ul></p>
+
+        <h5 class="pt-2">3) What is the time period for Fixed Deposit?</h5>
+        <p>In FDs one has to lock in a sum of money for a fixed time period. The tenure can range from minimum 7 days to a maximum of 10 years. Various financial institution provides FD of different maturities and interest rate. The Longer the maturity, higher will be the FD interest rates.</p>
+
+        <h5 class="mb-2">4) How much can we invest in FD?</h5>
+        <p>The investment amount in FD varies among different financial institutions. Some banks have the facility that we can start a FD by Rs 1000 also, while some banks allow the minimum amount to be Rs 20000. There is no limit on maximum amount which we can invest in the Fixed Deposit.</p>
+
+        <h5 class="mb-2">5) How is the Fixed Deposit interest rate calculated?</h5>
+        <p>The FD interest rate is calculated based on the tenure of the FD. It is compounded monthly, quarterly, yearly based on the type of option we choose. One does not need to dive into formula of how to calculate Fixed deposit rate We can directly use the FD interest rate calculator made by finology and enter the sum we want to invest and the tenure, then the interest rate calculator will provide the result of maturity amount and the interest earned.</p>
+
+        <h5 class="mb-2">6) Are interest on Fixed Deposits taxable?</h5>
+        <p>Yes, the FD interest rate is taxable as per the Income Tax Act 1961. The tax applicable on FD is deducted at the source by the banks. However, if your total income doesn’t exceed the minimum tax slab then you can avoid the TDS charges by banks on FD by submitting a declaration under section 197A of the Income Tax Act in Form 15-G or 15-H, whichever is applicable.</p>
+      
+        <h5 class="mb-2">7) Can we get monthly interest on Fixed deposit?</h5>
+        <p>Yes, we can opt FD calculator monthly interest if we want but that will reduce our maturity value as we can earn more by reinvesting the interest and compounding of it.</p>
+
+        <h5 class="mb-2">8) How to use this calculator?</h5>
+        <p>We have made a FD calculator which calculate FD interest rate and help you know your maturity and interest amount quickly without any formulas. You just need to enter the amount deposited in the FD, the Interest rate which is offered and the tenure of Fixed Deposit. After providing these values our calculator will show the amount which you will get at maturity and the total interest which is earned on it through quarterly compounding.</p>
+      </div>
+    </main>
+  </div>
+</div>
+
+
+    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+
+      <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script><script src="fd.js"></script>
+  </body>
+</html>

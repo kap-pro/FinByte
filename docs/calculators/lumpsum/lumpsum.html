@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.80.0">
+    <title>FinByte - Lumpsum Calculator</title>
+    <link rel="shortcut icon" type="image/jpg" href="/docs/assets/images/favicon.ico"/>
+
+    <!-- Bootstrap core CSS -->
+<link href="/docs/assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="lumpsum.css" rel="stylesheet">
+  </head>
+  <body>
+    
+<header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+  <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="/docs/dashboard/dashboard.html">FinByte.</a>
+  <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
+  <ul class="navbar-nav px-3">
+    <li class="nav-item text-nowrap">
+      <a class="nav-link" href="/docs/sign-in/signin.html">Sign out</a>
+    </li>
+  </ul>
+</header>
+
+<div class="container-fluid">
+  <div class="row">
+    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+      <div class="position-sticky pt-3">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="/docs/dashboard/dashboard.html">
+              <span data-feather="user"></span>
+              Dashboard
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="file"></span>
+              Watchlist
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="briefcase"></span>
+              Portfolio
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="/docs/calculators/calculators.html">
+              <span data-feather="divide-circle"></span>
+              Calculators
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="bar-chart-2"></span>
+              Reports
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="layers"></span>
+              Integrations
+            </a>
+          </li>
+        </ul>
+
+        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+          <span>Saved reports</span>
+          <a class="link-secondary" href="#" aria-label="Add a new report">
+            <span data-feather="plus-circle"></span>
+          </a>
+        </h6>
+        <ul class="nav flex-column mb-2">
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="file-text"></span>
+              Current month
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="file-text"></span>
+              Last quarter
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="file-text"></span>
+              Social engagement
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="file-text"></span>
+              Year-end sale
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3">
+        <h1 class="h2">Lumpsum Calculator</h1>
+      </div>
+      <p class="pb-2 mb-3 border-bottom">Thinking of making a Lumpsum investment? Calculate the future value of your wealth using our Lumpsum Calculator.</p>
+      <form class="row g-3">
+        <div class="col-md-3 mb-3">
+          <label for="exampleInputEmail1" class="form-label">Investment Amount <span class="text-danger font-weight-bold">*</span></label>
+          <input type="number" class="form-control" id="exampleInputEmail1" placeholder="Ex: 10000" aria-describedby="emailHelp" required>
+        </div>
+        <div class="col-md-3 mb-3">
+          <label for="exampleInputPassword1" class="form-label">Tenure (in years) <span class="text-danger font-weight-bold">*<small class="txtsize">(Up to 50 years)</small></span></label>
+          <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Ex: 10" required>
+        </div>
+        <div class="col-md-3 mb-3">
+          <label for="exampleInputPassword1" class="form-label">Expected rate of return (P.A) <span class="text-danger font-weight-bold">*</span></label>
+          <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Ex: 12%" required>
+        </div>
+        <div class="col-11">
+          <button class="btn btn-primary" type="submit">Calculate Future Value</button>
+        </div>
+      </form>
+      <div class="align-items-center pt-5 pb-2 mb-2 border-bottom">
+        <h1 class="h2 mb-4 pb-3 border-bottom">About Lumpsum Calculator</h1>
+        
+        <h5>1) What is a Lumpsum Investment?</h5>
+        <p>Lumpsum investment or one-time investment is a style of investment in which you invest once (lumpsum) and allow your invested money to generate compounding returns over a given time frame.</p>
+        
+        <h5 class="pt-2">2) What Is Lumpsum Calculator?</h5>
+        <p>With Lumpsum calculator you can calculate the maturity value of your investment. In other words, the Lumpsum Calculator tells the future value of your investment made today at a certain rate of interest. For example: If you invest 1 lakh rupees for 60 years at 15% rate of interest then according to lumpsum calculator, the future value of your investments will be mindboggling 43.8 cr. after 60 years.</p>
+
+        <h5 class="pt-2">3) How does this Lumpsum Calculator work?</h5>
+        <p>Our lumpsum calculator is so convenient to use that even a layman can use it. In our Lumpsum Calculator, you need to just enter the required inputs such as the amount you are willing to invest, the time period (in years) you are willing to stay invested and, the expected rate of return per annum that you think the investment will generate. After entering the required variables, the calculator will give you the future value of your investments.</p>
+
+        <h5 class="mb-2">4) When should one prefer Lumpsum Investment?</h5>
+        <p>Ideally any investment (whether lumpsum or SIP) should be done keeping in mind various things like current income, risk profile, age, tax constraints, liquidity needs, time frame and certain other unique constraints. Lumpsum investment is preferred when one has large amount of surplus funds and more importantly if he/she thinks that market has majorly corrected or it won’t fall just after making the investment. Lumpsum investment done over a longer period helps generate compounding rate of returns.</p>
+
+        <h5 class="mb-2">5) What’s the difference between Lumpsum and SIP?</h5>
+        <p>In lumpsum investment one needs to invest only once whereas, in SIP or Systematic Investment Plan one invests a fixed amount periodically. In lumpsum investment style the market condition plays a huge role because if the market makes a major correction after your investment, then it might take few years to reach your original investment amount. Whereas, in SIP or systematic investment style one need not worry about timing the market as investment is made during both ups and downs of the market. Therefore, the return generated is weighted average return.</p>
+
+        <h5 class="mb-2">6) Where can I park my funds for Lumpsum investment?</h5>
+        <p>For lumpsum investment one can choose various instruments like Mutual Funds, Equity Shares, Exchange Traded Funds, Liquid Funds, Bonds, Fixed Deposits etc. But again, we think that you should select these instruments for lumpsum investment only after considering your risk profile, financial goals, liquidity needs etc.</p>
+      </div>
+    </main>
+  </div>
+</div>
+
+
+    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+
+      <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script><script src="lumpsum.js"></script>
+  </body>
+</html>
