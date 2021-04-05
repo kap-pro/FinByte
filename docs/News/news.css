@@ -98,3 +98,30 @@ body {
   border-color: transparent;
   box-shadow: 0 0 0 3px rgba(255, 255, 255, .25);
 }
+
+.feed-item-title{
+	text-decoration:none;
+	font-size:24px;
+	font-weight:bold;
+}
+
+.feed-item-desc{
+	text-decoration:none;
+	padding-bottom:60px;
+	font-size:14px;
+	text-align:start;
+	   background-color: white;
+
+}
+
+.feed-title-image{
+  border-radius: 4px;
+  padding: 8px;
+  width: 40%;
+}
+
+a {
+  text-decoration:none;
+  color:#343a40;
+}
+
