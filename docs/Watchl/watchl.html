@@ -188,7 +188,7 @@
  
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2">Markets</h1>
+        <h1 class="h2">Markets<span data-feather="activity"></span></h1>
       </div>
 	  <div class="table-responsive">
               <table id="" class="table table-striped table-sm">
@@ -199,7 +199,13 @@
               <th>Name</th>
               <th>Exchange</th>
               <th>LTP</th>
-			  <th>Pin</th>
+              <th>High</th>
+              <th>Low</th>
+              <th>Buy</th>
+              <th>Sell</th>
+              <th>Volume</th>
+              
+			
               
            
             </tr>
@@ -351,9 +357,14 @@
 			
           
               <td> <img src="https://media.wazirx.com/media/${item.base_unit}/84.png" width="20" height="20"/></td>
-              <td>${item.base_unit}</td>
+              <td>${item.name}</td>
               <td>${item.quote_unit}</td>
               <td>${item.last}</td>
+              <td>${item.open}</td>
+              <td>${item.low}</td>
+              <td>${item.buy}</td>
+              <td>${item.sell}</td>
+              <td>${item.volume}</td>
 			    <td><i onclick="myFunction(this)" class="bi bi-pin-angle"></i></td>
           
            </tr>

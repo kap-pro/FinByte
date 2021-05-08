@@ -1,53 +1,40 @@
-/* globals Chart:false, feather:false */
+ {
+	let button = document.querySelector("#btn");
 
-(function () {
-  'use strict'
+	// Function for calculating BMI
+	button.addEventListener("click", calculateBMI);
+};
 
-  feather.replace()
+function calculateBMI() {
 
-  // Graphs
-  var ctx = document.getElementById('myChart')
-  // eslint-disable-next-line no-unused-vars
-  var myChart = new Chart(ctx, {
-    type: 'line',
-    data: {
-      labels: [
-        'Sunday',
-        'Monday',
-        'Tuesday',
-        'Wednesday',
-        'Thursday',
-        'Friday',
-        'Saturday'
-      ],
-      datasets: [{
-        data: [
-          15339,
-          21345,
-          18483,
-          24003,
-          23489,
-          24092,
-          12034
-        ],
-        lineTension: 0,
-        backgroundColor: 'transparent',
-        borderColor: '#007bff',
-        borderWidth: 4,
-        pointBackgroundColor: '#007bff'
-      }]
-    },
-    options: {
-      scales: {
-        yAxes: [{
-          ticks: {
-            beginAtZero: false
-          }
-        }]
-      },
-      legend: {
-        display: false
-      }
-    }
-  })
-})()
+	/* Getting input from user into height variable.
+	Input is string so typecasting is necessary. */
+	let amount = parseInt(document
+			.querySelector("#height").value);
+
+	/* Getting input from user into weight variable.
+	Input is string so typecasting is necessary.*/
+	let period = parseInt(document
+			.querySelector("#weight").value);
+			
+			let ret = parseInt(document
+			.querySelector("#ret").value);
+
+	let result = document.querySelector("#result");
+
+	 // Checking the user providing a proper
+	 // value or 
+
+
+
+		// Fixing upto 2 decimal places
+	
+			let interest = (amount * (ret * 0.01)) / period;
+						let total = ((amount / period) + interest).toFixed(2);
+
+
+		// Dividing as per the bmi conditions
+		result.innerHTML =
+			`<b>EMI</b> : <span>${total}</span>`
+		
+           }

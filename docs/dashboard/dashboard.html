@@ -7,10 +7,16 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.80.0">
+    <marquee id="mrq" style="color: black;"></marquee>
+
     <title>FinByte - Dashboard</title>
+ 
     <link rel="shortcut icon" type="image/jpg" href="../assets/images/favicon.ico"/>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
     <!-- Bootstrap core CSS -->
+    <link id="dark-theme-style" rel="stylesheet" />
+
 <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <style>
@@ -37,9 +43,12 @@
     
 <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
   <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="dashboard.html">FinByte.</a>
+  
   <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
+  
   </button>
+
   <div class="autocomplete" style="width:100%;">
     <input class="form-control form-control-dark w-100" id="myInput" type="text" name="myCountry" placeholder="Search" aria-label="Search">
     </div>
@@ -86,12 +95,20 @@
     color: #ffffff; 
   }
   </style>
+<div class="dropdown">
+  
+  <a class="btn btn-secondary dropdown-toggle" style ="border:none; background-color: black; padding: .686rem .75rem; border-radius:none;" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+    Raj Sharma
+  </a>
 
-  <ul class="navbar-nav px-3">
-    <li class="nav-item text-nowrap">
-      <a class="nav-link" href="/docs/sign-in/signin.html">Sign out</a>
-    </li>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+    <li><a class="dropdown-item" href="#">Profile</a></li>
+    <li><a class="dropdown-item" href="../index.html">Sign out</a></li>
+   
   </ul>
+</div>
+
+
 </header>
 
 <div class="container-fluid">
@@ -100,6 +117,8 @@
       <div class="position-sticky pt-3">
         <ul class="nav flex-column">
           <li class="nav-item">
+                <marquee id="mrq" style="color: black;"></marquee>
+
             <a class="nav-link active" aria-current="page" href="dashboard.html">
               <span data-feather="user"></span>
               Dashboard
@@ -179,19 +198,27 @@
 
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        
+
         <h1 id="cryptick" class="h2">Dashboard</h1>
+       
+
         <div class="btn-toolbar mb-2 mb-md-0">
           <div class="btn-group me-2">
-            <button type="button" class="btn btn-sm btn-outline-secondary">NIFTY 50</button>
-            <button type="button" class="btn btn-sm btn-outline-secondary">BSE SENSEX</button>
+            <button type="button" class="btn btn-sm btn-outline-secondary">INR</button>
+            <button type="button" class="btn btn-sm btn-outline-secondary">USDT</button>
           </div>
-          <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
-            <span data-feather="calendar"></span>
-            This week
-          </button>
+       
         </div>
       </div>
+     
 
+         
+       
+        
+       
+
+      <!---iframe src="https://coinswitch.co/coins/inr/inr-to-dogecoin" style="border:none;" width="900" height="380"></iframe-->
       <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
 
       <h2>Your Watchlist</h2>
@@ -209,32 +236,32 @@
           </thead>
           <tbody>
             <tr>
-              <td>UNITDSPR</td>
-              <td>BSE</td>
+              <td>BTC</td>
+              <td>INR</td>
               <td>529.00</td>
               <td>539.60</td>
               <td>517.80</td>
               <td>524.95</td>
             </tr>
             <tr>
-              <td>HINDUNILVR</td>
-              <td>NSE</td>
+              <td>ETH</td>
+              <td>INR</td>
               <td>2204.10</td>
               <td>2325.25</td>
               <td>2191.50</td>
               <td>2215.20</td>
             </tr>
             <tr>
-              <td>NESTLEIND</td>
-              <td>BSE</td>
+              <td>DOGE</td>
+              <td>INR</td>
               <td>16202.00</td>
               <td>16590.10</td>
               <td>16075.15</td>
               <td>16202.70</td>
             </tr>
             <tr>
-              <td>IRCTC</td>
-              <td>NSE</td>
+              <td>ADA</td>
+              <td>INR</td>
               <td>1750.00</td>
               <td>1875.00</td>
               <td>1703.00</td>
@@ -361,8 +388,12 @@
 
           dataArr = dataKeys.map((key) => data[key]);
 
-          const baseUnitArr = dataArr.map(item => `${item.base_unit}/${item.quote_unit}`);
+          const baseUnitArr = dataArr.map(item => `${item.name}`);
           autocomplete(document.getElementById("myInput"), baseUnitArr);
+
+          const PaseUnitArr = dataArr.map(item => `  ${item.base_unit}:${item.buy}`);
+          document.getElementById("mrq").innerText = PaseUnitArr;
+
     
           console.log(dataArr);
 
@@ -391,10 +422,11 @@
     }
 		
 		 makeAPICall()
-    
-		 
-			
+     
+  
 </script>
+ 
+
     <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
 
       <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script><script src="dashboard.js"></script>

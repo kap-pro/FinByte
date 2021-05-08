@@ -7,7 +7,8 @@
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.80.0">
     <title>FinByte - EMI Calculator</title>
-    <link rel="shortcut icon" type="image/jpg" href="/docs/assets/images/favicon.ico"/>
+    <link rel="shortcut icon" type="image/jpg" href="../../assets/images/favicon.ico"/>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script>
 
     <!-- Bootstrap core CSS -->
 <link href="../../assets/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -130,23 +131,25 @@
         <h1 class="h2">EMI Calculator</h1>
       </div>
       <p class="pb-2 mb-3 border-bottom">Wish to calculate the monthly EMI of your loan? Calculate the EMI that you would pay every month to repay your loan using our EMI Calculator.</p>
-      <form class="row g-3">
+      <div class="row g-3">
         <div class="col-md-3 mb-3">
           <label for="exampleInputEmail1" class="form-label">Loan Amount <span class="text-danger font-weight-bold">*</span></label>
-          <input type="number" class="form-control" id="exampleInputEmail1" placeholder="Ex: 1000" aria-describedby="emailHelp" required>
+          <input type="number" class="form-control" id="height" placeholder="Ex: 1000" aria-describedby="emailHelp" required>
         </div>
         <div class="col-md-3 mb-3">
-          <label for="exampleInputPassword1" class="form-label">Loan Tenure <span class="text-danger font-weight-bold">*<small class="txtsize">(Up to 30 years)</small></span></label>
-          <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Ex: 10" required>
+          <label for="exampleInputPassword1" class="form-label">Loan Tenure <span class="text-danger font-weight-bold">*<small class="txtsize">(In Months)</small></span></label>
+          <input type="number" class="form-control" id="weight" placeholder="Ex: 10" required>
         </div>
         <div class="col-md-3 mb-3">
           <label for="exampleInputPassword1" class="form-label">Interest Rate(P.A) <span class="text-danger font-weight-bold">*</span></label>
-          <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Ex: 12%" required>
+          <input type="number" class="form-control" id="ret" placeholder="Ex: 12%" required>
         </div>
         <div class="col-11">
-          <button class="btn btn-primary" type="submit">Calculate EMI</button>
+          <button class="btn btn-primary" id="btn" >Calculate EMI</button>
         </div>
-      </form>
+      </div>
+      <br>
+      <h2><span id="result"></span></h2>
       <div class="align-items-center pt-5 pb-2 mb-2 border-bottom">
         <h1 class="h2 mb-4 pb-3 border-bottom">About EMI Calculator</h1>
         
@@ -173,8 +176,9 @@
 </div>
 
 
-    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../assets/dist/js/bootstrap.bundle.min.js"></script>
 
-      <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script><script src="emi.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script>
+      <script src="emi.js"></script>
   </body>
 </html>
