@@ -135,6 +135,41 @@
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1 class="h2">Portfolio</h1>
       </div>
+      <form class="row g-3">
+        <div class="col-md-3 mb-3">
+          <label for="exampleInputEmail1" class="form-label">Quantity<span class="text-danger font-weight-bold">*</span></label>
+          <input type="number" class="form-control" id="exampleInputEmail1" placeholder="1000" aria-describedby="emailHelp" required>
+        </div>
+        <div class="col-md-3 mb-3">
+          <label for="exampleInputPassword1" class="form-label">Price Per Coin <span class="text-danger font-weight-bold">*</span></label>
+          <input type="number" class="form-control" id="exampleInputPassword1" placeholder="500" required>
+        </div>
+        <div class="col-md-3 mb-3">
+          <label for="exampleInputPassword1" class="form-label">Fee <span class="text-danger font-weight-bold">*</span></label>
+          <input type="number" class="form-control" id="exampleInputPassword1" placeholder="10000" required>
+        </div>
+        <div class="col-md-3 mb-3">
+          <label for="exampleInputPassword1" class="form-label">Transaction Type<span class="text-danger font-weight-bold">*</span></label>
+          <select class="form-select form-select-md" aria-label=".form-select-sm example">
+            <option value="0" selected>Buy</option>
+            <option value="1">Sell</option>
+            <option value="2">Transfer</option>
+          </select>
+        </div>
+        <div class="col-md-3 mb-3">
+          <label for="exampleInputEmail1" class="form-label">Date of Transaction<span class="text-danger font-weight-bold">*</span></label>
+          <input type="number" class="form-control" id="exampleInputEmail1" placeholder="DD/MM/YYYY" aria-describedby="emailHelp" required>
+        </div>
+        <div class="col-11">
+          <button class="btn btn-primary" type="submit">Add Transaction</button>
+        </div>
+      </form>
+
+      <br>
+
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">Holdings</h1>
+      </div>
     </main>
   </div>
 </div>

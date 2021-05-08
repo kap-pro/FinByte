@@ -180,92 +180,205 @@
               Last quarter
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <span data-feather="file-text"></span>
-              Social engagement
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <span data-feather="file-text"></span>
-              Year-end sale
-            </a>
-          </li>
         </ul>
       </div>
     </nav>
-
+    
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        
-
-        <h1 id="cryptick" class="h2">Dashboard</h1>
+      <br>
+      <div class="alert alert-success alert-dismissible fade show" role="alert">
+        Vist <a href="../Watchl/watchl.html" class="alert-link">Markets</a>. For more information about the Cryptocurrencies.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
+  
+        <h1 id="cryptick" class="h2">Bitcoin</h1>
        
-
         <div class="btn-toolbar mb-2 mb-md-0">
-          <div class="btn-group me-2">
+          <!--<div class="btn-group me-2">
             <button type="button" class="btn btn-sm btn-outline-secondary">INR</button>
             <button type="button" class="btn btn-sm btn-outline-secondary">USDT</button>
+          </div> -->
+          <div class="btn-group me-3">
+            <div class="dropdown" style="padding-right: 5px;">
+              <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButtonSM" data-bs-toggle="dropdown" aria-expanded="false">
+                Buy
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButtonSM">
+                <li><a class="dropdown-item" href="https://www.binance.com/en">Binance</a></li>
+                <li><a class="dropdown-item" href="https://www.coinbase.com/">Coinbase</a></li>
+                <li><a class="dropdown-item" href="https://wazirx.com">WazirX</a></li>
+              </ul>
+            </div>
+
+            <div class="dropdown" style="padding-right: 5px;" >
+              <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButtonSM" data-bs-toggle="dropdown" aria-expanded="false">
+                Exchange
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButtonSM">
+                <li><a class="dropdown-item" href="https://app.uniswap.org/#/swap">Uniswap</a></li>
+                <li><a class="dropdown-item" href="https://exchange.pancakeswap.finance/#/swap">PancakeSwap</a></li>
+              </ul>
+            </div>
+
+            <div class="dropdown">
+              <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButtonSM" data-bs-toggle="dropdown" aria-expanded="false">
+                Block Explorer
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButtonSM">
+                <li><a class="dropdown-item" href="https://etherscan.io">Etherscan</a></li>
+                <li><a class="dropdown-item" href="https://bscscan.com/">BscScan</a></li>
+              </ul>
+            </div>
           </div>
-       
+
         </div>
       </div>
-     
+      <!--<div class="row mb-3">
+        <div class="col-4 themed-grid-col">
+        </div>
+        <div class="col-4 themed-grid-col">>
+        </div>
+        <div class="col-4 themed-grid-col">
+        </div>
+      </div> -->
 
+      <div class="col">
+        <div class="card">
+          <div class="card-body row mb-3">
+            <div class="col-3 themed-grid-col">
+              <h2 class="card-title">₹4,326,747.16</h2>
+              <p class="card-text">Price Per Coin (INR)</p>
+            </div>
+            <div class="col-3 themed-grid-col">
+              <h5 class="card-title">Low :</h5>
+              <h5 class="card-text">₹4,164,231.68</h5>
+            </div>
+            <div class="col-3 themed-grid-col">
+              <h5 class="card-title">High :</h5>
+              <h5 class="card-text">₹4,356,610.41</h5>
+            </div>
+            <div class="col-3 themed-grid-col">
+              <h5 class="card-title">Volume :</h5>
+              <h5 class="card-text">₹4,892,950,907,011</h5>
+            </div>
+          </div>
+          <div class="card-footer text-muted"></div>
+        </div>
+      </div>
          
        
         
        
 
       <!---iframe src="https://coinswitch.co/coins/inr/inr-to-dogecoin" style="border:none;" width="900" height="380"></iframe-->
-      <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
-
-      <h2>Your Watchlist</h2>
+      <!--<canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas> -->
+      <br>
+      <br>
+      <h2>Top 10 Cryptocurrencies</h2>
       <div class="table-responsive">
         <table class="table table-striped table-sm">
           <thead>
             <tr>
-              <th>Name</th>
-              <th>Exchange</th>
-              <th>Open</th>
-              <th>High</th>
-              <th>Low</th>
-              <th>Prev. close</th>
+              <th>#</th>
+              <th>Coin</th>
+              <th>Symbol</th>
+              <th>Price</th>
+              <th>Circulating Supply</th>
+              <th>Total Supply</th>
+              <th>Mkt Cap</th>
             </tr>
           </thead>
           <tbody>
             <tr>
+              <td>1</td>
+              <td>Bitcoin</td>
               <td>BTC</td>
-              <td>INR</td>
-              <td>529.00</td>
-              <td>539.60</td>
-              <td>517.80</td>
-              <td>524.95</td>
+              <td>₹4,242,388</td>
+              <td>18,703,712</td>
+              <td>21 Million</td>
+              <td>₹79,348,408,412,962</td>
             </tr>
             <tr>
+              <td>2</td>
+              <td>Ethereum</td>
               <td>ETH</td>
-              <td>INR</td>
-              <td>2204.10</td>
-              <td>2325.25</td>
-              <td>2191.50</td>
-              <td>2215.20</td>
+              <td>₹264,977</td>
+              <td>115,791,077</td>
+              <td>∞</td>
+              <td>₹30,661,939,424,037</td>
             </tr>
             <tr>
+              <td>3</td>
+              <td>Binance Coin</td>
+              <td>BNB</td>
+              <td>₹46,669.81</td>
+              <td>154,533,652</td>
+              <td>171 Million</td>
+              <td>₹7,212,056,799,242</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>Dogecoin</td>
               <td>DOGE</td>
-              <td>INR</td>
-              <td>16202.00</td>
-              <td>16590.10</td>
-              <td>16075.15</td>
-              <td>16202.70</td>
+              <td>₹47.88</td>
+              <td>129,517,138,099</td>
+              <td>∞</td>
+              <td>₹6,270,150,792,589</td>
             </tr>
             <tr>
+              <td>5</td>
+              <td>XRP</td>
+              <td>XRP</td>
+              <td>₹113.21</td>
+              <td>46,030,731,641</td>
+              <td>100 Billion</td>
+              <td>₹5,216,419,856,497</td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td>Tether</td>
+              <td>USDT</td>
+              <td>₹72.59</td>
+              <td>55,447,995,223</td>
+              <td>55.4 Billion</td>
+              <td>₹3,988,678,670,872</td>
+            </tr>
+            <tr>
+              <td>7</td>
+              <td>Cardano</td>
               <td>ADA</td>
-              <td>INR</td>
-              <td>1750.00</td>
-              <td>1875.00</td>
-              <td>1703.00</td>
-              <td>1766.65</td>
+              <td>₹114.74</td>
+              <td>32,066,390,668</td>
+              <td>45 Billion</td>
+              <td>₹3,679,402,951,473</td>
+            </tr>
+            <tr>
+              <td>8</td>
+              <td>Polkadot</td>
+              <td>DOT</td>
+              <td>₹2,843.66</td>
+              <td>990,777,463</td>
+              <td>1.07 Billion</td>
+              <td>₹2,817,435,987,447</td>
+            </tr>
+            <tr>
+              <td>9</td>
+              <td>Bitcoin Cash</td>
+              <td>BCH</td>
+              <td>₹98,047.72</td>
+              <td>18,731,262</td>
+              <td>21 Million</td>
+              <td>₹1,835,584,613,832</td>
+            </tr>
+            <tr>
+              <td>10</td>
+              <td>Litecoin</td>
+              <td>LTC</td>
+              <td>₹24,479.24</td>
+              <td>66,752,415</td>
+              <td>21 Million</td>
+              <td>₹1,634,434,943,229</td>
             </tr>
           </tbody>
         </table>
